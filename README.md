@@ -1,0 +1,2 @@
+# CenteringTitleViewWithHonor
+ナビゲーションのtitleViewに複数のUILabelを中央に配置する
