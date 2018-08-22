@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  CenteringTitleViewWithHonor
-//
-//  Created by Naraki on 8/20/18.
-//  Copyright © 2018 i-enter. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain

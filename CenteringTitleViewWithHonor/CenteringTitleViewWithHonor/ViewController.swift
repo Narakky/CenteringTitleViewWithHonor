@@ -1,25 +1,31 @@
-//
-//  ViewController.swift
-//  CenteringTitleViewWithHonor
-//
-//  Created by Naraki on 8/20/18.
-//  Copyright © 2018 i-enter. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var naviTextView: UITextField!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func button1Tapped(_ sender: UIButton) {
+        transitionToResultView(isTitleView: false)
+    }
 
+    @IBAction func button2Tapped(_ sender: UIButton) {
+        transitionToResultView(isTitleView: true)
+    }
+
+    private func transitionToResultView(isTitleView: Bool) {
+        guard let resultViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "result") as? ResultViewController else { return }
+        resultViewController.isTargetTitleView = isTitleView
+        resultViewController.setTitle(title: naviTextView.text)
+        navigationController?.pushViewController(resultViewController, animated: true)
+    }
 }
-
